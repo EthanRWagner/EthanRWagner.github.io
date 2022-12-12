@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.btn-home {
+  font-size: 48px;
+}
+
+i[name='home-btn'] {
+  font-size: 48px;
+  color: darkolivegreen;
+}
