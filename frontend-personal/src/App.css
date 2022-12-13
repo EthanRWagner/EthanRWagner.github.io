@@ -45,3 +45,12 @@ i[name='home-btn'] {
   font-size: 48px;
   color: darkolivegreen;
 }
+
+.navBar-cont-active {
+  color: darkolivegreen;
+}
+
+.navBar-item {
+  font-family: 'Courier New', Courier, monospace;
+  color: darkolivegreen;
+}

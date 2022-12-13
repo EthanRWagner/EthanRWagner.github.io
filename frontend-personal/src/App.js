@@ -3,16 +3,17 @@ import './App.css';
 
 //material ui drawer imports
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import {Drawer, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import AboutIcon from '@mui/icons-material/EmojiPeopleOutlined';
+import RamblingIcon from '@mui/icons-material/MoreHoriz';
+import ResumeIcon from '@mui/icons-material/HandshakeOutlined';
+import ProjectsIcon from '@mui/icons-material/Code';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+import { createTheme } from '@mui/material/styles';
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+
+import Resume from './docs/Ethan_Wagner_Resume.pdf';
 
 function App() {
 
@@ -31,6 +32,15 @@ function App() {
     setNavBar(open);
   };
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: ['Courier New', 'Courier', 'monospace'].join(','),
+      color: 'darkolivegreen',
+      }
+    })
+
+  const navList = ['/projects', '/about', '/rambling'];
+
   // navBar element / drawer
   const drawer = (
     <Box
@@ -38,31 +48,41 @@ function App() {
       role="presentation"
       onClick={toggleNavBar(false)}
       onKeyDown={toggleNavBar(false)}
+      className="navBar-box"
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+        {['projects', 'about', 'rambling'].map((text, index) => (
+          <Link to={navList[index]}>
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon
+                  sx={{
+                    color: 'darkolivegreen',
+                  }}>
+                  {(index === 0) ? <ProjectsIcon /> :
+                  (index === 1) ? <AboutIcon /> : <RamblingIcon />}
+                </ListItemIcon>
+                <ListItemText primaryTypographyProps={theme} primary={text} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem onClick={() => window.open("https://github.com/EthanRWagner", '_blank')} key={"github"} disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <GitHubIcon />
+            </ListItemIcon>
+            <ListItemText primaryTypographyProps={theme} primary={"github"} />
+          </ListItemButton>
+        </ListItem>
+        <ListItem onClick={() => window.open(Resume, '_blank')} key={"resume"} disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <ResumeIcon />
+            </ListItemIcon>
+            <ListItemText primaryTypographyProps={theme} primary={"resume"} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -74,19 +94,39 @@ function App() {
       </head>
 
       <body>
-        <div>
+        <Router>
           <div>
-              <Button className='home-btn' onClick={toggleNavBar(true)}>
-                  <i className='material-icons' name='home-btn'>home</i>
-              </Button>
-              <Drawer
-                open={navBar}
-                onClose={toggleNavBar(false)}
-              >
-                {drawer}
-              </Drawer>
+            <div>
+                <Button className='home-btn' onClick={toggleNavBar(true)}>
+                    <i className='material-icons' name='home-btn'>home</i>
+                </Button>
+                <Drawer
+                  className='navBar-cont-active'
+                  open={navBar}
+                  onClose={toggleNavBar(false)}
+                >
+                  {drawer}
+                </Drawer>
+            </div>
+          <Routes>
+            <Route path="/">
+              Home
+            </Route>
+
+            <Route path="/projects">
+              Projects
+            </Route>
+
+            <Route path="/about">
+              About
+            </Route>
+
+            <Route path="/rambling">
+              Rambling
+            </Route>
+          </Routes>
           </div>
-        </div>
+        </Router>
       </body>
     </>
     
