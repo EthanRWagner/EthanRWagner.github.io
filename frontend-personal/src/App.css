@@ -43,14 +43,34 @@
 
 i[name='home-btn'] {
   font-size: 48px;
-  color: darkolivegreen;
+  color: #bb5347;
 }
 
-.navBar-cont-active {
-  color: darkolivegreen;
+.navBar-box {
+  background-color: #84a4a9;
 }
 
 .navBar-item {
   font-family: 'Courier New', Courier, monospace;
   color: darkolivegreen;
+}
+
+body {
+  background-color: #708090;
+}
+
+.content-container {
+  display: flex;
+  width: 600px;
+  height: 800px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.title-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 72px;
+  color: #bb5347;
 }
