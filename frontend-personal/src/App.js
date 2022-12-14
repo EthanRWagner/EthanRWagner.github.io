@@ -3,7 +3,8 @@ import './App.css';
 
 //material ui drawer imports
 import Box from '@mui/material/Box';
-import {Drawer, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import {Drawer, Avatar, Button, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import PersonalIcon from './docs/personal-logo-400.png';
 import HomeIcon from '@mui/icons-material/HomeOutlined';
 import AboutIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import RamblingIcon from '@mui/icons-material/MoreHoriz';
@@ -16,6 +17,11 @@ import { createTheme } from '@mui/material/styles';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
 import Resume from './docs/Ethan_Wagner_Resume.pdf';
+
+import Home from './components/HomePage';
+import Projects from './components/ProjectsPage';
+import About from './components/AboutPage';
+import Rambling from './components/RamblingPage';
 
 function App() {
 
@@ -38,7 +44,7 @@ function App() {
   const theme = createTheme({
     typography: {
       fontFamily: ['Courier New', 'Courier', 'monospace'].join(','),
-      fontSize: 'medium',
+      fontSize: 20,
       fontWeight: 600,
       color: '#bb5347',
       }
@@ -122,9 +128,16 @@ function App() {
       <body className='main-page-background'>
         <Router>
           <div>
-            <div>
-                <Button className='home-btn' onClick={toggleNavBar(true)}>
-                    <i className='material-icons' name='home-btn'>home</i>
+            <div className='header-cont'>
+              <div className='menu-div'>
+                <Button
+                  onClick={toggleNavBar(true)}
+                  startIcon={<Avatar sx={{
+                                     height: '125px',
+                                     width: '125px',
+                                     }}
+                                     src={PersonalIcon} />}
+                >
                 </Button>
                 <Drawer
                   className='navBar-cont-active'
@@ -133,27 +146,34 @@ function App() {
                 >
                   {drawer}
                 </Drawer>
+              </div>
+                <small className='title-text'>ethan wagner</small>
             </div>
             <Routes>
-              <Route path="/">
-                Home
-              </Route>
+              <Route path="/"
+                     element={
+                       <Home />
+                     } 
+              />
 
-              <Route path="/projects">
-                Projects
-              </Route>
+              <Route path="/projects"
+                     element={
+                       <Projects />
+                     } 
+              />
 
-              <Route path="/about">
-                About
-              </Route>
+              <Route path="/about"
+                     element={
+                       <About />
+                     } 
+              />
 
-              <Route path="/rambling">
-                Rambling
-              </Route>
+              <Route path="/rambling"
+                     element={
+                       <Rambling />
+                     } 
+              />
             </Routes>
-          </div>
-          <div className='content-container'>
-              <large className='title-text'>ethan wagner</large>
           </div>
         </Router>
       </body>
