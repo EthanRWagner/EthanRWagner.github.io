@@ -45,7 +45,7 @@ function App() {
     typography: {
       fontFamily: ['Courier New', 'Courier', 'monospace'].join(','),
       fontSize: 20,
-      fontWeight: 600,
+      fontWeight: '600',
       color: '#bb5347',
       }
     })
@@ -120,64 +120,56 @@ function App() {
   );
 
   return (
-    <>
-      <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
-      </head>
-
-      <body className='main-page-background'>
-        <Router>
-          <div>
-            <div className='header-cont'>
-              <div className='menu-div'>
-                <Button
-                  onClick={toggleNavBar(true)}
-                  startIcon={<Avatar sx={{
-                                     height: '125px',
-                                     width: '125px',
-                                     }}
-                                     src={PersonalIcon} />}
-                >
-                </Button>
-                <Drawer
-                  className='navBar-cont-active'
-                  open={navBar}
-                  onClose={toggleNavBar(false)}
-                >
-                  {drawer}
-                </Drawer>
-              </div>
-                <small className='title-text'>ethan wagner</small>
-            </div>
-            <Routes>
-              <Route path="/"
-                     element={
-                       <Home />
-                     } 
-              />
-
-              <Route path="/projects"
-                     element={
-                       <Projects />
-                     } 
-              />
-
-              <Route path="/about"
-                     element={
-                       <About />
-                     } 
-              />
-
-              <Route path="/rambling"
-                     element={
-                       <Rambling />
-                     } 
-              />
-            </Routes>
+    <Router>
+      <div className='main-page-background'>
+        <div className='header-cont'>
+          <div className='menu-div'>
+            <Button
+              onClick={toggleNavBar(true)}
+              startIcon={<Avatar sx={{
+                                  height: '125px',
+                                  width: '125px',
+                                  }}
+                                  src={PersonalIcon} />}
+            >
+            </Button>
+            <Drawer
+              className='navBar-cont-active'
+              open={navBar}
+              onClose={toggleNavBar(false)}
+            >
+              {drawer}
+            </Drawer>
           </div>
-        </Router>
-      </body>
-    </>
+            <small className='title-text'>ethan wagner</small>
+        </div>
+        <Routes>
+          <Route path="/"
+                  element={
+                    <Home />
+                  } 
+          />
+
+          <Route path="/projects"
+                  element={
+                    <Projects />
+                  } 
+          />
+
+          <Route path="/about"
+                  element={
+                    <About />
+                  } 
+          />
+
+          <Route path="/rambling"
+                  element={
+                    <Rambling />
+                  } 
+          />
+        </Routes>
+      </div>
+    </Router>
     
   );
 }
