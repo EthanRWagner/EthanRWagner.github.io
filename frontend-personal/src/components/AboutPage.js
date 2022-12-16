@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import PC from '../docs/PC.jpg';
 
 function About () {
 
@@ -24,7 +25,7 @@ function About () {
             </p>
             <p>
                 In Fall 2022, I was accepted in the BS + MS Blended Master's Program at Cal Poly in computer science. This will extend my stay at Cal Poly for a maximum 
-                of two years, with an expected graduation date of Spring 2025. My thesis topic is to research and construct a computational model for vision, simulate the 
+                of two years, with an expected graduation date of June 2025. My thesis topic is to research and construct a computational model for vision, simulate the 
                 processing and perception of light and images, and induce a high&#8211;resolution phosphene image in an organism&#39;s visual field through electrical stimulation.
                 &nbsp;<a href='https://www.mugizirwebangira.com/' target='_blank' rel='noreferrer noopener'>Dr. Mugizi Rwebangira</a> is my advisor in the master's program.
             </p>
@@ -32,10 +33,46 @@ function About () {
             <p>
                 Outside of my studies, I train Brazillian jiu jitsu &#40;almost&#41; everyday at Paragon. I started training January 9th, 2021 and am currently a white belt. 
                 I have competed at JJWL Fullerton &#40;208lb weight class&#41; placing 2nd in no gi, JJWL San Diego &#40;208lb weight class&#41; placing 1st overall in gi and 
-                3rd in no-gi, and JJWL Phoenic &#40;208lb weight class&#41; placing 1st in gi and 1st in no-gi. I also lift weights to supplement my strength for jiu jitsu. Of
-                course to supplement all this physical activity, I have been experimenting with nutrition and cooking since I was a freshman in high school. My video game of 
-                choice is Valorant by Riot Games, I am ranked Platinum III. I am a big fan of listening to podcasts in the background of lifting, walking from place to place, or 
-                doing more passive activities.
+                3rd in no-gi, and JJWL Phoenix &#40;208lb weight class&#41; placing 1st in gi and 1st in no-gi. I also lift weights to supplement my strength for jiu jitsu. Of
+                course to supplement all this physical activity, I have been experimenting with nutrition and cooking since I was a freshman in high school. I am a big fan of 
+                listening to podcasts in the background of lifting, walking from place to place, or doing more passive activities. My video game of choice is Valorant by Riot 
+                Games, I am ranked Platinum III. To run this game smoothly and out of my own desire for computers and electronics, I built my own PC and mechanical keyboard 
+                in March of 2021. My PC has the following specifications:
+                <ul>
+                    <li>
+                        CPU: AMD Ryzen 7 5800X
+                    </li>
+                    <li>
+                        GPU: ASUS Dual GeForce NVIDIA RTX 3060 12 GB
+                    </li>
+                    <li>
+                        Motherboard: ASUS ROG Strix B550-F Gaming &#40;WiFi 6&#41; AMD AM4 &#40;3rd Gen Ryzen&#41; ATX Gaming Motherboard
+                    </li>
+                    <li>
+                        Memory: G.SKILL Trident Z RGB 32GB RAM DDR4 3200 
+                    </li>
+                    <li>
+                        Power Supply: EVGA SuperNOVA 850W 80 Plus Gold
+                    </li>
+                    <li>
+                        Storage: SAMSUNG 860 EVO Series M.2 2280 2TB SATA III SSD
+                    </li>
+                    <li>
+                        Case: Cooler Master MasterBox MB520 ARGB ATX Mid-Tower
+                    </li>
+                    <li>
+                        CPU Cooler: CoolerMaster MasterLiquid ML240L RGB V2
+                    </li>
+                    <li>
+                        Main Monitor: ASUS VG278QR 27" 165Hz
+                    </li>
+                    <li>
+                        Secondary Monitor: ASUS TUF Gaming VG24VQ 24" 144Hz
+                    </li>
+                </ul>
+                <div className='img-box'>
+                    <img className='img-resize' src={PC} alt='pc-1'/>
+                </div>
             </p>
         </div>
     );
