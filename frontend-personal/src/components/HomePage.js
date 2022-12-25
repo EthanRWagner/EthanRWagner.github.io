@@ -2,6 +2,10 @@ import React from 'react';
 import '../App.css';
 import PersonalIcon from '../docs/personal-logo-200.png';
 
+// Security
+//https://owasp.org/www-project-web-security-testing-guide/
+//https://owasp.org/www-project-zap/
+
 function Home () {
 
     return (

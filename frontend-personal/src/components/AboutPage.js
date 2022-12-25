@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import PC from '../docs/PC.jpg';
+import keyboard1 from '../docs/keyboard-1.jpg';
+import keyboard2 from '../docs/keyboard-2.jpg';
 
 function About () {
 
@@ -35,9 +37,15 @@ function About () {
                 I have competed at JJWL Fullerton &#40;208lb weight class&#41; placing 2nd in no gi, JJWL San Diego &#40;208lb weight class&#41; placing 1st overall in gi and 
                 3rd in no-gi, and JJWL Phoenix &#40;208lb weight class&#41; placing 1st in gi and 1st in no-gi. I also lift weights to supplement my strength for jiu jitsu. Of
                 course to supplement all this physical activity, I have been experimenting with nutrition and cooking since I was a freshman in high school. I am a big fan of 
-                listening to podcasts in the background of lifting, walking from place to place, or doing more passive activities. My video game of choice is Valorant by Riot 
+                listening to podcasts in the background of lifting, walking from place to place, or doing more passive activities. 
+            </p>
+            <p>
+                My video game of choice is Valorant by Riot 
                 Games, I am ranked Platinum III. To run this game smoothly and out of my own desire for computers and electronics, I built my own PC and mechanical keyboard 
                 in March of 2021. My PC has the following specifications:
+                <br></br>
+                <a href='https://www.newegg.com/tools/custom-pc-builder/showcase/Ethan-s-Personal-Computer/ID-27332336?gid=27332336' 
+                        target='_blank' rel='noreferrer noopener'>Link to my PC build</a>
                 <ul>
                     <li>
                         CPU: AMD Ryzen 7 5800X
@@ -73,6 +81,39 @@ function About () {
                 <div className='img-box'>
                     <img className='img-resize' src={PC} alt='pc-1'/>
                 </div>
+            </p>
+            <p>
+                The mechanical keyboard I made took me around 18 hours to build because of the lubrication of the switches, soldering of the components, programming of 
+                the keyboard profile. I used QMK firmware to program the Bit-C MCU on the keyboard. There are default profiles that can be programmed to the MCU, which
+                I used with some editing because of some added peripherals I added to the keyboard. My keyboard featured the following components:
+                <ul>
+                    <li>
+                        Case: Nullbits Nibble 65% Customizable Keyboard &#40;Black&#41;
+                    </li>
+                    <li>
+                        MCU: Bit-C &#40;White&#41;
+                    </li>
+                    <li>
+                        Switches: Kailh Bronze Speed
+                    </li>
+                    <li>
+                        Key Caps: DROP + Redsuns GMK Red Samurai Keycap Set for 65% Keyboards
+                    </li>
+                    <li>
+                        Mount Stabilizers: Original Cherry PCB-Mount Stabilizers
+                    </li>
+                    <li>
+                        Mounting Plate: OEM FR4 Plate for Nibble 65% Mechanical Keyboard Kit &#40;Black&#41;
+                    </li>
+                    <br></br>
+                    <div className='img-box'>
+                        <img className='img-resize-2' src={keyboard1} alt='keyboard-1'/>
+                    </div>
+                    <br></br>
+                    <div className='img-box'>
+                        <img className='img-resize-2' src={keyboard2} alt='keyboard-2'/>
+                    </div>
+                </ul> 
             </p>
         </div>
     );
