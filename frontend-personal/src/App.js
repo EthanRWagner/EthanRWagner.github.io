@@ -121,7 +121,7 @@ function App() {
 
   return (
     <Router>
-      <div className='main-page-background'>
+      <div className='body'>
         <div className='header-cont'>
           <div className='menu-div'>
             <Button
@@ -143,31 +143,38 @@ function App() {
           </div>
             <small className='title-text'>ethan wagner</small>
         </div>
-        <Routes>
-          <Route path="/"
-                  element={
-                    <Home />
-                  } 
-          />
 
-          <Route path="/projects"
-                  element={
-                    <Projects />
-                  } 
-          />
+        <div className='content-wrap'>
+          <Routes>
+            <Route path="/"
+                    element={
+                      <Home />
+                    } 
+            />
 
-          <Route path="/about"
-                  element={
-                    <About />
-                  } 
-          />
+            <Route path="/projects"
+                    element={
+                      <Projects />
+                    } 
+            />
 
-          <Route path="/rambling"
-                  element={
-                    <Rambling />
-                  } 
-          />
-        </Routes>
+            <Route path="/about"
+                    element={
+                      <About />
+                    } 
+            />
+
+            <Route path="/rambling"
+                    element={
+                      <Rambling />
+                    } 
+            />
+          </Routes>
+        </div>
+
+        <div className="footer">
+          <p>This is some content in sticky footer</p>
+        </div>
       </div>
     </Router>
     

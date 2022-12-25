@@ -36,8 +36,10 @@ i[name='home-btn'] {
   color: darkolivegreen;
 }
 
-body {
+.body {
   background-color: #cdb37a;
+  position: relative;
+  min-height: 100vh;
 }
 
 .content-container {
@@ -47,6 +49,7 @@ body {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 30px;
   
 }
 
@@ -116,4 +119,18 @@ h1 {
 .img-resize-2 {
   height: 300px;
   width: 500px;
+}
+
+.content-wrap {
+  padding-bottom: 80px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  box-shadow: 8px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: #bb5347;
 }
