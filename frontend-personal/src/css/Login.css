@@ -1,0 +1,19 @@
+input[name="creds"] {
+    -webkit-text-security: disc;
+  }
+
+input[name="creds"]:focus {
+    font-family: 'Courier New', Courier, monospace;
+    color: black !important;
+  }
+
+.content-container {
+    display: block;
+    width: 800px;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    
+  }

@@ -12,6 +12,7 @@ import ResumeIcon from '@mui/icons-material/HandshakeOutlined';
 import ProjectsIcon from '@mui/icons-material/Code';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import AdminIcon from '@mui/icons-material/LockOutlined';
 
 import { createTheme } from '@mui/material/styles';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
@@ -22,6 +23,7 @@ import Home from './components/HomePage';
 import Projects from './components/ProjectsPage';
 import About from './components/AboutPage';
 import Rambling from './components/RamblingPage';
+import Login from './components/LoginPage';
 
 function App() {
 
@@ -115,6 +117,19 @@ function App() {
             <ListItemText primaryTypographyProps={theme} primary={"resume"} />
           </ListItemButton>
         </ListItem>
+        <Link to={'/admin'} style={{ textDecoration: 'none' }}>
+            <ListItem key={'admin'} disablePadding>
+              <ListItemButton>
+                <ListItemIcon
+                  sx={{
+                    color: '#bb5347',
+                  }}>
+                  <AdminIcon />
+                </ListItemIcon>
+                <ListItemText primaryTypographyProps={theme} primary={'admin'} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
       </List>
     </Box>
   );
@@ -169,11 +184,16 @@ function App() {
                       <Rambling />
                     } 
             />
+            
+            <Route path="/admin"
+                    element={
+                      <Login />
+                    } 
+            />
           </Routes>
         </div>
 
         <div className="footer">
-          <p>This is some content in sticky footer</p>
         </div>
       </div>
     </Router>

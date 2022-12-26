@@ -1,0 +1,24 @@
+.blog-container {
+    padding: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: auto;
+    width: 800px;
+    border-radius: 5px;
+    background-color: #84a4a9;
+}
+
+.content-container {
+    display: block;
+    width: 800px;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    
+  }
+
+h1[name="post-heading"] {
+    font-size: 20px;
+}

@@ -26,3 +26,9 @@ mongoose
     }
   )
   .catch((error) => console.log(error));
+
+  async function getPosts() {
+    return await blogModel.find();
+  }
+
+  exports.getPosts = getPosts;
