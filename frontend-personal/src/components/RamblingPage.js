@@ -10,7 +10,6 @@ function Rambling () {
 
     window.addEventListener('load', async () => {
         await makeFeed();
-        console.log(window.sessionStorage.getItem("id"));
     });
 
     async function makeFeed() {
@@ -38,8 +37,8 @@ function Rambling () {
     return (
         <div className='content-container'>
             <h1>Rambling</h1>
-            {(window.sessionStorage.getItem("id") !== null) &&
-            <button>Create Blog Post</button>}
+            {(window.sessionStorage.getItem("id") !== "null") &&
+                <button>Create Blog Post</button>}
             {feed.posts}
         </div>
     );

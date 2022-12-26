@@ -33,8 +33,7 @@ function Login() {
                 setState(true);
             }
             else {
-                console.log(result);
-                window.sessionStorage.setItem("id", result.data[0]['_id']);
+                window.sessionStorage.setItem("id", result.data);
                 navigate('../');
             }
         });
@@ -55,10 +54,9 @@ function Login() {
         setCreds({key: ""});
     }
 
-    function LogOut() {
+    async function LogOut() {
         window.sessionStorage.setItem("id", null);
         window.location.reload(false);
-        console.log(window.sessionStorage.getItem("id"));
     }
 
     return (
@@ -82,15 +80,12 @@ function Login() {
                                 onChange={handleChange}/>
                             
                         </div>
-                        <div className="form-group">
+                        {(window.sessionStorage.getItem("id") === "null") &&
                             <input type="button" value="Submit" 
-                            onClick={LoginForm} />
-                        </div>
-                        {(window.sessionStorage.getItem("id") !== null) &&
-                            <div className="form-group">
+                            onClick={LoginForm} />}
+                        {(window.sessionStorage.getItem("id") !== "null") &&
                                 <input type="button" value="Log Out" 
-                                onClick={LogOut} />
-                            </div>}
+                                onClick={LogOut} />}
                     </Form>
                     {loginState && <small>Login failed, please try again.</small>}
                 </div>

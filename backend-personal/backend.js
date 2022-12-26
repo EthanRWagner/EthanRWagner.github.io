@@ -20,14 +20,14 @@ app.listen(process.env.PORT || port, () => {
 
 // if an admin key is in the keys collection then authenticate login attempt
 app.post("/login", async(req, res) => {
-    const {key} = req.body;
+    const key = req.body["key"];
     //check for fields
     if(!key){
         return res.status(404).send("Need a key");
     }
     const keyItem = await keyServices.findKey(key);
-    if(keyItem !== undefined){
-        return res.status(202).send("Valid Login").send(keyItem[0]);
+    if(keyItem !== undefined && keyItem !== null){
+        return res.status(202).send(keyItem[0]._id);
     }
     return res.status(404).send("Invalid key");
 });
