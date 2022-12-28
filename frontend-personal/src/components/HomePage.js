@@ -1,6 +1,11 @@
 import React from 'react';
 import '../App.css';
-import PersonalIcon from '../docs/personal-logo-200.png';
+//import PersonalIcon from '../docs/personal-logo-200.png';
+import Ethan1 from '../docs/ethan-1.jpg';
+import Ethan2 from '../docs/ethan-2.jpg';
+import Ethan3 from '../docs/ethan-3.jpg';
+import Ethan4 from '../docs/ethan-4.JPEG';
+
 
 // Security
 //https://owasp.org/www-project-web-security-testing-guide/
@@ -24,16 +29,16 @@ function Home () {
 
                 <div id="row">
                     <div className='child'>
-                        <img src={PersonalIcon} alt="Snow"/>
+                        <img className='img-resize-3' src={Ethan1} alt="prof1"/>
                     </div>
                     <div className='child'>
-                        <img src={PersonalIcon} alt="Forest"/>
+                        <img className='img-resize-3' src={Ethan2} alt="prof2"/>
                     </div>
                     <div className='child'>
-                        <img src={PersonalIcon} alt="Snow"/>
+                        <img  className='img-resize-3' src={Ethan3} alt="prof3"/>
                     </div>
                     <div className='child'>
-                        <img src={PersonalIcon} alt="Forest"/>
+                        <img  className='img-resize-3' src={Ethan4} alt="prof4"/>
                     </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@ i[name='home-btn'] {
   color: #bb5347;
   margin-left: auto;
   margin-right: auto;
-  width: 67%;
+  width: 800px;
 }
 
 .header-cont {
@@ -71,7 +71,7 @@ i[name='home-btn'] {
 .menu-div {
   position: relative;
   margin-left: 0px;
-  width: 33%;
+  width: 250px;
 }
 
 p {
@@ -89,16 +89,17 @@ h1 {
 #row {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 4 x 25% / can also use 1fr 1fr 1fr 1fr or 25% 25% 25% 25%, without the repeat(), fr stands for fraction */
-  grid-gap: 10px; /* 10px horizontal and vertical gap between child elements */
-  width: 600px;
+  grid-gap: 15px; /* 10px horizontal and vertical gap between child elements */
+  width: 515px;
+  height: 615px;
   max-width: 130rem;
   font-size: 1rem;
   margin: auto;
 }
 
 .child {
-  margin: auto;
-  width: 200px;
+  width: 250px;
+  height: 300px;
 }
 
 @media (max-width: 60rem){
@@ -119,6 +120,11 @@ h1 {
 .img-resize-2 {
   height: 300px;
   width: 500px;
+}
+
+.img-resize-3 {
+  height: 300px;
+  width: 250px;
 }
 
 .content-wrap {
