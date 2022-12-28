@@ -1,0 +1,38 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy backend to Netlify - ethanwagner
+
+on:
+  push:
+    branches:
+      - ci-cd
+  workflow_dispatch:
+  
+defaults:
+  run:
+    working-directory: ./backend-personal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+          cache: "npm"
+          cache-dependency-path: backend-personal/package-lock.json
+
+      - name: npm install, build, and test
+        env:
+          MONGO_DB: ${{ secrets.MONGO_DB }}
+          MONGO_USER: ${{ secrets.MONGO_USER }}
+          MONGO_PWD: ${{ secrets.MONGO_PWD }}
+          MONGO_CLUSTER: ${{ secrets.MONGO_CLUSTER}}
+        run: |
+          npm install
+          npm run build --if-present
