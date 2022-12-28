@@ -67,6 +67,7 @@ app.get("/blog", async (req, res) => {
   }
 });
 
+
 // get a post from the database by id
 app.get("/blog/:id", async (req, res) => {
   try {
