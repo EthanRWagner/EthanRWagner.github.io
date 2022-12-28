@@ -7,7 +7,6 @@ import PersonalIcon from '../docs/personal-logo-200.png';
 //https://owasp.org/www-project-zap/
 
 function Home () {
-    console.log(window.sessionStorage.getItem("id"));
     return (
             <div className='content-container'>
                 <h1>A short introduction...</h1>

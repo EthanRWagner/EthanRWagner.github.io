@@ -31,4 +31,9 @@ mongoose
     return await blogModel.find();
   }
 
+  async function getPostByID(id) {
+    return await blogModel.findById(id);
+  }
+
   exports.getPosts = getPosts;
+  exports.getPostByID = getPostByID;

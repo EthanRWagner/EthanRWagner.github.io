@@ -57,11 +57,23 @@ app.post("/blog", async(req, res) =>{
   }
 });
 
-// get all the post from the database
+// get all the posts from the database
 app.get("/blog", async (req, res) => {
   try {
     const posts_from_db = await blogServices.getPosts();
     res.send({ post_list: posts_from_db });
+  } catch (error) {
+    res.status(500).send("An error ocurred in the server.");
+  }
+});
+
+// get a post from the database by id
+app.get("/blog/:id", async (req, res) => {
+  try {
+    const id = req.params["id"];
+    console.log(id);
+    const post_with_ID = await blogServices.getPostByID(id);
+    res.send({ post: post_with_ID });
   } catch (error) {
     res.status(500).send("An error ocurred in the server.");
   }

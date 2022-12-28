@@ -24,6 +24,7 @@ import Projects from './components/ProjectsPage';
 import About from './components/AboutPage';
 import Rambling from './components/RamblingPage';
 import Login from './components/LoginPage';
+import PostDetails from './components/PostDetailsPage';
 
 function App() {
 
@@ -189,6 +190,11 @@ function App() {
                     element={
                       <Login />
                     } 
+            />
+            <Route path='/rambling/:id'
+                    element={
+                      <PostDetails />
+                    }
             />
           </Routes>
         </div>
