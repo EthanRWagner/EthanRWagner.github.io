@@ -46,7 +46,7 @@ function Rambling () {
         .then(data =>
             setFeed({posts: data})
         );
-      }, [feed])
+      }, [])
 
     return(
         <div className='content-container'>

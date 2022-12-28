@@ -22,7 +22,7 @@ function PostDetails (){
         .then(data =>
             setPost(data)
         );
-      }, [post, id])
+      }, [])
 
     return(
         <div className='content-container'>
