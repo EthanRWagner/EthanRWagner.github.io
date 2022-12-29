@@ -32,4 +32,3 @@ jobs:
           cache-dependency-path: frontend-personal/package-lock.json
       - run: npm ci --legacy-peer-deps
       - run: npm run build --if-present --legacy-peer-deps
-      - run: npm test
