@@ -22,6 +22,7 @@ function PostDetails (){
         .then(data =>
             setPost(data)
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
 
     return(
